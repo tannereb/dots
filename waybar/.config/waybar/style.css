@@ -1,0 +1,147 @@
+/* --- Global Styles --- */
+* {
+  font-family: "Noto Sans Mono";
+  font-size: 12px;
+  min-height: 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  padding-bottom: 0px;
+}
+
+/* --- Waybar Container --- */
+#waybar {
+  background: transparent;
+  color: #fbf1c7;
+  margin: 0px;
+  font-weight: 500;
+}
+
+/* --- Left Modules --- */
+#workspaces,
+#custom-uptime,
+#cpu {
+  background-color: #282828;
+  padding: 0.2rem 0.6rem;
+  margin: 4px 0px;
+  border-radius: 6px;
+  box-shadow: none;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#workspaces {
+  padding: 2px;
+  margin-left: 7px;
+  margin-right: 5px;
+}
+
+#custom-uptime {
+  margin-right: 5px;
+}
+
+#custom-uptime:hover,
+#cpu:hover {
+  background-color: #282828;
+}
+
+#workspaces button {
+  color: #fbf1c7;
+  border-radius: 5px;
+  padding: 0.2rem 0.6rem;
+  background: transparent;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  outline: none;
+}
+
+#workspaces button.active {
+  background: #282828;
+  color: #fbf1c7;
+}
+
+#workspaces button:hover {
+  background: #282828;
+  color: #fbf1c7;
+}
+
+/* --- Right Modules --- */
+#custom-vpn,
+#clock,
+#bluetooth,
+#pulseaudio,
+#backlight,
+#network,
+#custom-lock,
+#battery {
+  background-color: #282828;
+  padding: 0.2rem 0.6rem;
+  margin: 4px 0px;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 0;
+  border: none;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#clock:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#custom-lock:hover,
+#battery:hover {
+  background-color: #282828;
+}
+
+#bluetooth {
+  margin-left: 0px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#clock {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-right: 7px;
+}
+
+#custom-uptime,
+#cpu,
+#clock,
+#pulseaudio,
+#backlight,
+#network,
+#network.disconnected,
+#custom-lock,
+#bluetooth,
+#bluetooth.on,
+#bluetooth.connected,
+#battery,
+#battery.charging,
+#battery.warning:not(.charging) {
+  color: #fbf1c7;
+}
+
+#bluetooth {
+  font-size: 16px;
+}
+
+/* --- Tooltip Styles --- */
+tooltip {
+  background-color: #282828;
+  color: #fbf1c7;
+  padding: 5px 12px;
+  margin: 5px 0px;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+  font-size: 12px;
+}
+
+/* VPN Module Styling */
+#custom-vpn.active {
+  background: #282828;
+  color: #fbf1c7;
+  padding: 0.3rem 0.6rem;
+}

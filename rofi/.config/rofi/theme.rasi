@@ -1,0 +1,148 @@
+* {
+    bg:             #282828ff;
+    bg-alt:         #1d2021ff;
+    fg:             #ebdbb2ff;
+    fg-dim:         #a89984ff;
+
+    accent:         #83a598ff;
+    accent-alt:     #fabd2fff;
+    urgent:         #fb4934ff;
+    selected:       #3c3836ff;
+
+    border-color:   #504945ff;
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    location: north;
+    anchor: north;
+    y-offset: 10px;
+    fullscreen: false;
+    width: 360px;
+    border: 1px;
+    border-radius: 12px;
+    border-color: @border-color;
+    background-color: @bg;
+    padding: 18px;
+}
+
+mainbox {
+    spacing: 14px;
+    background-color: transparent;
+}
+
+inputbar {
+    children: [ "prompt", "entry" ];
+    spacing: 10px;
+    padding: 12px;
+    border: 1px;
+    border-radius: 10px;
+    border-color: @border-color;
+    background-color: @bg-alt;
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @accent-alt;
+    font: "Noto Sans 9";
+    str: "";
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg;
+    placeholder: "Search";
+    placeholder-color: @fg-dim;
+    font: "Noto Sans 9";
+}
+
+message {
+    border: 0;
+    border-radius: 8px;
+    background-color: @bg-alt;
+    padding: 10px;
+}
+
+textbox {
+    text-color: @fg-dim;
+    background-color: transparent;
+}
+
+listview {
+    lines: 4;
+    columns: 1;
+    fixed-height: false;
+    border: 0;
+    border-radius: 10px;
+    background-color: transparent;
+    scrollbar: false;
+    spacing: 8px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 12px;
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element normal.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: @selected;
+    text-color: @fg;
+}
+
+element selected.active {
+    background-color: @accent;
+    text-color: @bg-alt;
+}
+
+element selected.urgent {
+    background-color: @urgent;
+    text-color: @bg-alt;
+}
+
+element-icon {
+    size: 1.1em;
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    vertical-align: 0.5;
+    font: "Noto Sans 9";
+}
+
+mode-switcher {
+    spacing: 8px;
+    margin: 0px 0px 1px 0px;
+    background-color: transparent;
+}
+
+button {
+    padding: 8px 12px;
+    border: 1px;
+    border-radius: 10px;
+    border-color: @border-color;
+    background-color: @bg-alt;
+    text-color: @fg-dim;
+    font: "Noto Sans 9";
+}
+
+button selected {
+    background-color: @accent;
+    border-color: @accent;
+    text-color: @bg-alt;
+}

@@ -74,6 +74,7 @@
   },
 
   "network": {
+    "interface": "wlp61s0",
     "format-wifi": "󰤢",
     "format-ethernet": "󰈀 ",
     "format-disconnected": "󰤠 ",
@@ -108,8 +109,8 @@
         "format": "{icon}",
         "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
         "tooltip": false,
-        "on-click": "hyprsunset -t 2500",
-        "on-click-middle": "killall hyprsunset"
+        "on-click": "~/.config/waybar/scripts/toggle-brightness.sh",
+        "on-click-middle": "~/.config/waybar/scripts/toggle-hyprsunset.sh"
   },
   
   "pulseaudio": {

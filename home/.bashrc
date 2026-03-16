@@ -10,6 +10,7 @@ export VISUAL=micro
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias ff='firefox'
 
 PS1='\[\e[38;5;244m\]\u@\h \[\e[38;5;81m\]\w\[\e[0m\] '
 

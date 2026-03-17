@@ -69,7 +69,7 @@
   "clock": {
     "timezone": "America/New_York",
     "tooltip": false,
-    "format": "{:%I:%M   -  %D}",
+    "format": "{:%I:%M - %D}",
     "interval": 60
   },
 

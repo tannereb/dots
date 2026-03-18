@@ -1,0 +1,421 @@
+/* ======================================== */
+/* Firefox Gruvbox Theme Skeleton           */
+/* ======================================== */
+
+:root{
+  /* ---------- colors ---------- */
+  --bg: #282828;
+  --bg-alt: #1d2021;
+  --bg-active: #3c3836;
+  --fg: #ebdbb2;
+  --border: #504945;
+
+  /* ---------- sizing ---------- */
+  --toolbar-font-size: 9pt !important;
+  --tab-height: 30px !important;
+  --urlbar-height: 30px !important;
+  --bookmarks-height: 20px !important;
+
+  /* ---------- shape ---------- */
+  --tab-radius: 6px !important;
+  --urlbar-radius: 6px !important;
+  --menu-radius: 8px !important;
+
+  /* ---------- spacing ---------- */
+  --toolbar-button-x-padding: 6px !important;
+  --toolbar-button-min-width: 28px !important;
+  --tab-label-left-padding: 8px !important;
+  --tab-label-right-padding: 6px !important;
+  --tab-close-size: 14px !important;
+  --icon-size: 20px !important;
+  --icon-inner-padding: 2px !important;
+  --menu-item-padding: 4px 8px !important;
+
+  /* ---------- Firefox internals ---------- */
+  --tab-block-margin: 0px !important;
+  --tabs-navbar-shadow-size: 0px !important;
+  --toolbarbutton-icon-fill: var(--fg) !important;
+  --toolbar-field-background-color: var(--bg) !important;
+  --toolbar-field-focus-background-color: var(--bg) !important;
+  --toolbar-field-focus-border-color: transparent !important;
+  --toolbar-field-border-color: transparent !important;
+  --focus-outline-color: transparent !important;
+}
+
+/* ======================================== */
+/* Global cleanup                           */
+/* ======================================== */
+
+#navigator-toolbox,
+#navigator-toolbox *{
+  font-size: var(--toolbar-font-size) !important;
+}
+
+#navigator-toolbox{
+  background: var(--bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#titlebar{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.titlebar-spacer,
+.titlebar-buttonbox-container,
+#toolbar-menubar,
+#firefox-view-button,
+#sidebar-button,
+#PanelUI-sidebar,
+#urlbar-searchmode-switcher{
+  display: none !important;
+}
+
+/* kill misc separators / pseudo-elements */
+#navigator-toolbox::after,
+#nav-bar::after,
+#TabsToolbar::after,
+#tabbrowser-tabbox::before,
+#tabbrowser-tabbox::after,
+#tabbrowser-tabpanels::before,
+#tabbrowser-tabpanels::after,
+#browser::before,
+#browser::after{
+  display: none !important;
+  content: none !important;
+}
+
+/* ======================================== */
+/* Tabs                                     */
+/* ======================================== */
+
+#TabsToolbar{
+  background: var(--bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: var(--tab-height) !important;
+  height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
+}
+
+#tabbrowser-tabs{
+  --tab-min-height: var(--tab-height) !important;
+  min-height: var(--tab-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#tabbrowser-arrowscrollbox,
+#tabbrowser-arrowscrollbox-periphery,
+.tabbrowser-tab,
+.tab-stack,
+.tab-content,
+.tab-background{
+  min-height: var(--tab-height) !important;
+  height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.tab-background{
+  background: var(--bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: var(--tab-radius) !important;
+  clip-path: inset(0 0 0 0 round var(--tab-radius)) !important;
+}
+
+.tabbrowser-tab[selected] .tab-background{
+  background: var(--bg-active) !important;
+}
+
+.tabbrowser-tab:not([selected]) .tab-background{
+  background: var(--bg) !important;
+}
+
+.tab-content{
+  padding: 0 var(--tab-label-right-padding) 0 var(--tab-label-left-padding) !important;
+}
+
+.tab-label{
+  color: var(--fg) !important;
+  line-height: 1 !important;
+}
+
+.tab-close-button{
+  width: var(--tab-close-size) !important;
+  height: var(--tab-close-size) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ======================================== */
+/* Navigation bar / URL bar                 */
+/* ======================================== */
+
+#nav-bar{
+  background: var(--bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: var(--urlbar-height) !important;
+  height: var(--urlbar-height) !important;
+}
+
+#TabsToolbar + #nav-bar,
+#titlebar + #nav-bar,
+#TabsToolbar{
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#nav-bar-customization-target,
+.toolbar-items{
+  min-height: var(--urlbar-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+
+#urlbar-container{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#urlbar,
+#searchbar{
+  min-height: var(--urlbar-height) !important;
+  height: var(--urlbar-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#urlbar-background,
+#searchbar{
+  background: var(--bg) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: var(--urlbar-radius) !important;
+  min-height: var(--urlbar-height) !important;
+  margin: 0 !important;
+}
+
+#urlbar[focused] > #urlbar-background,
+#urlbar[open] > #urlbar-background,
+#urlbar[breakout] > #urlbar-background,
+#urlbar[breakout][breakout-extend] > #urlbar-background{
+  background: var(--bg) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+#urlbar-input{
+  color: var(--fg) !important;
+}
+
+.urlbar-input-box{
+  background: transparent !important;
+}
+
+/* ======================================== */
+/* URL bar popup                            */
+/* ======================================== */
+
+.urlbarView,
+.urlbarView-body-outer,
+.urlbarView-body-inner,
+.urlbarView-results,
+#urlbar[open] > .urlbarView{
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.urlbarView{
+  border-radius: var(--urlbar-radius) !important;
+}
+
+.urlbarView-row{
+  background: transparent !important;
+  color: var(--fg) !important;
+}
+
+.urlbarView-row:hover,
+.urlbarView-row[selected]{
+  background: var(--bg-active) !important;
+}
+
+.urlbarView-title,
+.urlbarView-url,
+.urlbarView-action,
+.urlbarView-row *{
+  color: var(--fg) !important;
+}
+
+/* ======================================== */
+/* Toolbar buttons / icons                  */
+/* ======================================== */
+
+.toolbarbutton-1{
+  min-width: var(--toolbar-button-min-width) !important;
+  margin: 0 !important;
+  padding: 0 var(--toolbar-button-x-padding) !important;
+  align-items: center !important;
+}
+
+.toolbarbutton-icon,
+.toolbarbutton-badge-stack,
+.toolbarbutton-animatable-box,
+.tab-icon-image,
+.tab-close-button,
+#urlbar-container svg,
+#urlbar-container image,
+.webextension-browser-action .toolbarbutton-icon,
+.unified-extensions-item-icon{
+  fill: var(--fg) !important;
+  stroke: var(--fg) !important;
+  color: var(--fg) !important;
+  opacity: 1 !important;
+}
+
+.toolbarbutton-badge-stack,
+.toolbarbutton-icon{
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  padding: var(--icon-inner-padding) !important;
+}
+
+/* ======================================== */
+/* Bookmarks bar                            */
+/* ======================================== */
+
+#PersonalToolbar{
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  min-height: var(--bookmarks-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#PersonalToolbar .bookmark-item{
+  color: var(--fg) !important;
+}
+
+#PersonalToolbar .bookmark-item:hover{
+  background: var(--bg-active) !important;
+  color: var(--fg) !important;
+}
+
+/* ======================================== */
+/* Content seam fix                         */
+/* ======================================== */
+
+#browser,
+#appcontent,
+#tabbrowser-tabbox,
+#tabbrowser-tabpanels{
+  background: var(--bg) !important;
+  border-top: 1px solid var(--bg) !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ======================================== */
+/* Application menu                         */
+/* ======================================== */
+
+panel,
+panelview,
+.PanelUI-subView,
+.PanelUI-mainView,
+.panel-subview-body,
+#appMenu-popup,
+#customizationui-widget-panel,
+#widget-overflow,
+.panel-arrowcontent,
+.panel-arrowcontainer,
+.panel-viewcontainer,
+.panel-viewstack{
+  background: var(--bg) !important;
+  color: var(--fg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  border-radius: var(--menu-radius) !important;
+  overflow: hidden !important;
+}
+
+panel,
+panel *,
+.panel-subview-body,
+.panel-subview-body *,
+.PanelUI-subView,
+.subviewbutton{
+  font-size: var(--toolbar-font-size) !important;
+}
+
+.subviewbutton,
+.panel-subview-body .toolbarbutton-1{
+  color: var(--fg) !important;
+}
+
+.subviewbutton{
+  padding: var(--menu-item-padding) !important;
+}
+
+.subviewbutton:hover,
+.panel-subview-body .toolbarbutton-1:hover{
+  background: var(--bg-active) !important;
+  color: var(--fg) !important;
+}
+
+toolbarseparator,
+menuseparator{
+  border-color: var(--border) !important;
+}
+
+.panel-subview-body .toolbarbutton-icon{
+  fill: var(--fg) !important;
+  stroke: var(--fg) !important;
+}
+
+/* ============================= */
+/* Disable tab hover tooltip text */
+/* ============================= */
+
+#tabbrowser-tab-tooltip,
+tooltip[label=""],
+.tooltip-label{
+  display: none !important;
+}
+
+/* tab width */
+#tabbrowser-tabs{
+  --tab-min-width: 90px !important;
+}
+
+.tabbrowser-tab{
+  max-width: 180px !important;
+}
+
+/* ============================= */
+/* Remove left edge line before first tab */
+/* ============================= */
+
+#tabbrowser-tabs{
+  border-inline: none !important;
+
+}
+

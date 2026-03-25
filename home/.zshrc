@@ -1,6 +1,20 @@
-#
-# ~/.bashrc
-#
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zshhistory
+HISTSIZE=10000
+SAVEHIST=30000
+setopt autocd extendedglob nomatch notify
+unsetopt beep
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/tanner/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+source /usr/share/zsh/plugins/zsh-you-should-use/zsh-you-should-use.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 #fetch
 fastfetch
@@ -19,7 +33,7 @@ alias ff="firefox"
 alias ra="ranger"
 alias mi="micro"
 alias cat="bat"
-alias grep="ripgrep"
+#alias grep="ripgrep"
 alias fda='fd -H'
 alias ls='eza'
 alias ll='eza -lah'
@@ -30,23 +44,13 @@ alias ....='cd ../../..'
 alias path='echo -e ${PATH//:/\\n}'
 alias rld='source ~/.bashrc'
 
-# just type dir name instead of "cd dir"
-shopt -s autocd
-
 #launcher function
 run() {
   setsid "$@" >/dev/null 2>&1 < /dev/null &
 }
-#autocomplete in launcher function
-complete -c r
 
-# Much larger history
-HISTSIZE=100000
-HISTFILESIZE=200000
-
-# Append instead of overwrite
-shopt -s histappend
-
+#zoxide init
+eval "$(zoxide init zsh)"
 # Ignore duplicates and commands starting with space
 HISTCONTROL=ignoreboth
 
@@ -54,6 +58,10 @@ HISTCONTROL=ignoreboth
 PROMPT_COMMAND="history -a; history -c; history -r"
 
 #prompt
-PS1='\[\e[93m\]\u@\h \[\e[90m\]\w\[\e[0m\] '
+PROMPT='%F{yellow}%n@%m %F{242}%~%f '
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+
 
 

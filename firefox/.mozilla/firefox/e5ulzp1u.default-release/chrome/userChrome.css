@@ -74,7 +74,6 @@
   display: none !important;
 }
 
-/* kill misc separators / pseudo-elements */
 #navigator-toolbox::after,
 #nav-bar::after,
 #TabsToolbar::after,
@@ -105,9 +104,13 @@
 
 #tabbrowser-tabs{
   --tab-min-height: var(--tab-height) !important;
+  --tab-min-width: 90px !important;
   min-height: var(--tab-height) !important;
+  border-inline: none !important;
   margin: 0 !important;
   padding: 0 !important;
+  padding-inline-end: 0 !important;
+  margin-inline-end: 0 !important;
 }
 
 #tabbrowser-arrowscrollbox,
@@ -121,6 +124,24 @@
   max-height: var(--tab-height) !important;
   margin: 0 !important;
   padding: 0 !important;
+}
+
+#tabbrowser-arrowscrollbox{
+  margin-inline-end: 0 !important;
+  padding-inline-end: 0 !important;
+}
+
+/* keep periphery in normal flow without reserving weird extra space */
+#tabbrowser-arrowscrollbox-periphery{
+  flex: 0 0 auto !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* IMPORTANT: apply width cap only to fade-in tabs */
+.tabbrowser-tab[fadein]:not([style^="max-width"], [pinned]){
+  max-width: 180px !important;
 }
 
 .tab-background{
@@ -151,6 +172,12 @@
 .tab-close-button{
   width: var(--tab-close-size) !important;
   height: var(--tab-close-size) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#new-tab-button,
+#tabs-newtab-button{
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -391,31 +418,12 @@ menuseparator{
   stroke: var(--fg) !important;
 }
 
-/* ============================= */
-/* Disable tab hover tooltip text */
-/* ============================= */
+/* ======================================== */
+/* Disable tab hover tooltip text           */
+/* ======================================== */
 
 #tabbrowser-tab-tooltip,
 tooltip[label=""],
 .tooltip-label{
   display: none !important;
 }
-
-/* tab width */
-#tabbrowser-tabs{
-  --tab-min-width: 90px !important;
-}
-
-.tabbrowser-tab{
-  max-width: 180px !important;
-}
-
-/* ============================= */
-/* Remove left edge line before first tab */
-/* ============================= */
-
-#tabbrowser-tabs{
-  border-inline: none !important;
-
-}
-

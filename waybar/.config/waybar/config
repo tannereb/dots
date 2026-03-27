@@ -14,15 +14,20 @@
   
 
   "modules-right": [
-  	"bluetooth",
-    "custom/vpn",
-    
-    "network",
+    "tray",
     "pulseaudio", 
     "backlight",
     "battery",
     "clock"
   ],
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 12
+  },
+
+
+
 
   "hyprland/workspaces": {
     "format": " {icon}",
@@ -32,15 +37,6 @@
     }
   },
 
-  "custom/vpn": {
-      "format": "{}",
-      "interval": 3,
-      "return-type": "json",
-      "exec": "$HOME/.config/waybar/check-vpn-status.sh",
-      "on-click": "$HOME/.config/waybar/toggle-vpn.sh",
-      "on-click-right": "kitty -e $HOME/.config/waybar/select.sh",
-      "signal": 8
-  },
 
   "bluetooth": {
     "format": "󰂲",

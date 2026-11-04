@@ -56,6 +56,7 @@ hl.on("hyprland.start", function ()
    hl.exec_cmd("nm-applet")
    hl.exec_cmd("blueman-applet")
    hl.exec_cmd("protonvpn-app")
+   hl.exec_cmd("hyprsunset -t 5000")
    hl.exec_cmd("waybar & hyprpaper & firefox")
  end)
 
@@ -347,6 +348,18 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+
+-- Hyprsunset temperature control
+hl.bind(mainMod .. " + SHIFT + mouse_up",
+    hl.dsp.exec_cmd("hyprctl hyprsunset temperature +500"))
+
+hl.bind(mainMod .. " + SHIFT + mouse_down",
+    hl.dsp.exec_cmd("hyprctl hyprsunset temperature -500"))
+
+
+
+
 
 
 --------------------------------

@@ -1,7 +1,7 @@
 /* --- Global Styles --- */
 * {
   font-family: "Noto Sans Mono";
-  font-size: 12px;
+  font-size: 14px;
   min-height: 0;
   padding-right: 0px;
   padding-left: 0px;
@@ -34,6 +34,7 @@
   padding: 2px;
   margin-left: 7px;
   margin-right: 5px;
+  font-size: 30px;
 }
 
 #custom-uptime {
@@ -151,3 +152,5 @@ tooltip {
   color: #fbf1c7;
   padding: 0.3rem 0.6rem;
 }
+
+

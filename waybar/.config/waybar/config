@@ -30,6 +30,7 @@
 
 
   "hyprland/workspaces": {
+  "icon-size": 32,
     "format": " {icon}",
     "format-icons": {
       "active": "",
@@ -110,14 +111,17 @@
   },
   
   "pulseaudio": {
-    "format": "{icon}",
-    "format-muted": "",
+   
+    "format": "((({volume}%)))",
+    "format-muted": "(((muted)))",
+ // "format-muted": "",
     "format-icons": {
       "default": ["", "", " "]
     },
     "on-click": "pavucontrol",
     "max-volume": 150,
-    "tooltip-format": "{desc} - {volume}%"
+    "tooltip-format": "{desc} - {volume}%",
+    "scroll-step": 5
   },
 
   "battery": {

@@ -42,7 +42,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias path='echo -e ${PATH//:/\\n}'
-alias rld='source ~/.bashrc'
+alias rld='source ~/.zshrc'
+alias rb='systemctl reboot'
+alias sd='systemctl poweroff'
+alias cl='clear && fastfetch'
 
 #launcher function
 run() {
